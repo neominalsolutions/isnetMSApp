@@ -25,6 +25,7 @@ namespace OrderService.Domain.SeedWork
 
     public override string ToString() => Name;
 
+    // Enum daki tüm elemanları getir
     public static IEnumerable<T> GetAll<T>() where T : Enumeration =>
            typeof(T).GetFields(BindingFlags.Public |
                                BindingFlags.Static |
@@ -34,6 +35,7 @@ namespace OrderService.Domain.SeedWork
 
 
     // FindOne x=> x.name=='visa'
+    // enum içerisinden 1 eleman getirir.
     private static T Parse<T, K>(K value, string description, Func<T, bool> predicate) where T : Enumeration
     {
       var matchingItem = GetAll<T>().FirstOrDefault(predicate);
@@ -44,13 +46,14 @@ namespace OrderService.Domain.SeedWork
       return matchingItem;
     }
 
-
+    // enumdaki elamanın value id değerini okumak
     public static T FromValue<T>(int value) where T : Enumeration
     {
       var matchingItem = Parse<T, int>(value, "value", item => item.Id == value);
       return matchingItem;
     }
 
+    // enumdaki elemanın name değerini okumak 
     public static T FromDisplayName<T>(string displayName) where T : Enumeration
     {
       var matchingItem = Parse<T, string>(displayName, "display name", item => item.Name == displayName);

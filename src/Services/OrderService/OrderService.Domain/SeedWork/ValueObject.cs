@@ -26,6 +26,8 @@ namespace OrderService.Domain.SeedWork
       return !EqualOperator(left, right);
     }
 
+    // nesne içerisindeki propertylerin değerlerini dışarı aktarmamız sağlar.
+    // nesneye ait property değerlerini kıyaslanmasında kullanılır
     protected abstract IEnumerable<object> GetEqualityComponents();
 
 

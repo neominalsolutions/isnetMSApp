@@ -15,7 +15,13 @@ namespace OrderService.Domain.Models.Aggregates.Customers
     // müşterinin birden fazla ödeme yöntemi olabilir.
     private List<PaymentMethod> _paymentMethods = new List<PaymentMethod>();
 
+    // Müşterinin var olan ödeme yöntemleri 
     public IEnumerable<PaymentMethod> PaymentMethods => _paymentMethods;
+
+    public Customer()
+    {
+
+    }
     public Customer(string customerName)
     {
       CustomerName = customerName;

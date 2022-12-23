@@ -11,14 +11,24 @@ namespace OrderService.Domain.Models.Aggregates.Customers
   public class PaymentMethod
   {
     public string Id { get; set; }
-    public string CardHolderName { get; private set; }
-    public string CardNumber { get; private set; }
-    public DateTime ValidTru { get; private set; }
 
-    // hangi tip kart ile işlem yapıldı
-    public int CardTypeId { get; private set; }
+    // Kart üzerindeki isim
+    public string CardHolderName { get; private set; }
+
+    // Kart Numarası
+    public string CardNumber { get; private set; }
+
+    // Kart Geçerlilik Tarihi
+    public DateTime ValidThru { get; private set; }
+
+    // hangi tip kart ile işlem yapıldı (Amex,MasterCard,Visa)
+    public int CardTypeId { get; private set; } // 1,2,3
     public CardType CardType { get; set; }
 
+    public PaymentMethod()
+    {
+
+    }
 
     public PaymentMethod(string cardNumber,DateTime validTru,string cardHolderName, int cardTypeId)
     {
@@ -26,7 +36,7 @@ namespace OrderService.Domain.Models.Aggregates.Customers
       CardNumber = cardNumber;
       CardHolderName = cardHolderName;
       CardTypeId = cardTypeId;
-      ValidTru = validTru;
+      ValidThru = validTru;
     }
 
 
