@@ -35,33 +35,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Twilio", "Twilio", "{05546D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EFCore", "EFCore", "{3A1A1728-5F33-4E8E-8118-5F6A1EDBBBFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.API", "src\Services\OrderService\OrderService.API\OrderService.API.csproj", "{4EEEA169-E169-428E-AAC8-F249C172BE08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.API", "src\Services\OrderService\OrderService.API\OrderService.API.csproj", "{4EEEA169-E169-428E-AAC8-F249C172BE08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Domain", "src\Services\OrderService\OrderService.Domain\OrderService.Domain.csproj", "{AE70C174-19F3-4453-8C5C-AE57A9A91404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Domain", "src\Services\OrderService\OrderService.Domain\OrderService.Domain.csproj", "{AE70C174-19F3-4453-8C5C-AE57A9A91404}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Application", "src\Services\OrderService\OrderService.Application\OrderService.Application.csproj", "{9BFD53A8-BA73-4AC9-A128-369D6C0D9C3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Application", "src\Services\OrderService\OrderService.Application\OrderService.Application.csproj", "{9BFD53A8-BA73-4AC9-A128-369D6C0D9C3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Infrastructure", "src\Services\OrderService\OrderService.Infrastructure\OrderService.Infrastructure.csproj", "{B72990E6-09CE-4B74-AF20-F5E7FFAF0F87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Infrastructure", "src\Services\OrderService\OrderService.Infrastructure\OrderService.Infrastructure.csproj", "{B72990E6-09CE-4B74-AF20-F5E7FFAF0F87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketService.API", "src\Services\BasketService\BasketService.API\BasketService.API.csproj", "{F0FF8F5F-2A94-4DB2-A2B6-CD034099A46C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasketService.API", "src\Services\BasketService\BasketService.API\BasketService.API.csproj", "{F0FF8F5F-2A94-4DB2-A2B6-CD034099A46C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService.API", "src\Services\ProductService\ProductService.API\ProductService.API.csproj", "{D5D64818-75B7-4C15-BF6F-41E4EDF2E092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductService.API", "src\Services\ProductService\ProductService.API\ProductService.API.csproj", "{D5D64818-75B7-4C15-BF6F-41E4EDF2E092}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityService", "IdentityService", "{C1F0C648-70A6-47DA-9B38-0A4A1555591F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService.API", "src\Services\IdentityService\IdentityService.API\IdentityService.API.csproj", "{6685A643-A164-4289-8498-8CA23479D3BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService.API", "src\Services\IdentityService\IdentityService.API\IdentityService.API.csproj", "{6685A643-A164-4289-8498-8CA23479D3BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGateways.WebApiGateway", "src\Gateways\WebGateways\WebGateways.WebApiGateway\WebGateways.WebApiGateway.csproj", "{39953861-9025-4EBC-9537-EA59256206B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGateways.WebApiGateway", "src\Gateways\WebGateways\WebGateways.WebApiGateway\WebGateways.WebApiGateway.csproj", "{39953861-9025-4EBC-9537-EA59256206B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApp.ECommerce", "src\Clients\MvcApp\MvcApp.ECommerce\MvcApp.ECommerce.csproj", "{FDC1A6FC-41C6-460E-847A-65FC0D2627C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcApp.ECommerce", "src\Clients\MvcApp\MvcApp.ECommerce\MvcApp.ECommerce.csproj", "{FDC1A6FC-41C6-460E-847A-65FC0D2627C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore", "src\BuildingBlocks\EFCore\EFCore\EFCore.csproj", "{C373D3FE-6503-44BE-80FF-16451D072B8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore", "src\BuildingBlocks\EFCore\EFCore\EFCore.csproj", "{C373D3FE-6503-44BE-80FF-16451D072B8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{B88D5229-8CD4-4239-BE69-D280010D543A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EFCore", "EFCore", "{0F694C90-2C8B-4EDF-966E-535316AB8574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCore.XUnit", "test\BuildingBlocks\EFCore\EFCore.XUnit\EFCore.XUnit.csproj", "{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.XUnit", "test\BuildingBlocks\EFCore\EFCore.XUnit\EFCore.XUnit.csproj", "{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documents", "documents", "{A4D52AF9-D330-42FF-A7C0-898B89A04648}"
+	ProjectSection(SolutionItems) = preProject
+		..\EventStorming.png = ..\EventStorming.png
+		..\MassTransit.jpg = ..\MassTransit.jpg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
