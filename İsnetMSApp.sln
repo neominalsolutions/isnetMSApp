@@ -63,12 +63,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EFCore", "EFCore", "{0F694C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.XUnit", "test\BuildingBlocks\EFCore\EFCore.XUnit\EFCore.XUnit.csproj", "{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documents", "documents", "{A4D52AF9-D330-42FF-A7C0-898B89A04648}"
-	ProjectSection(SolutionItems) = preProject
-		..\EventStorming.png = ..\EventStorming.png
-		..\MassTransit.jpg = ..\MassTransit.jpg
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
