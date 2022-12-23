@@ -12,6 +12,8 @@ namespace OrderService.Domain.SeedWork
      string Id { get; set; }
      DateTime CreatedAt { get; set; }
 
+
+    IReadOnlyCollection<INotification> DomainEvents { get; }
     void AddDomainEvent(INotification @event);
 
     void RemoveDomainEvent(INotification @event);

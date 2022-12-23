@@ -18,6 +18,12 @@ namespace OrderService.Domain.Models.Aggregates.Customers
     // Müşterinin var olan ödeme yöntemleri 
     public IEnumerable<PaymentMethod> PaymentMethods => _paymentMethods;
 
+
+    public void AddPaymentMehod(PaymentMethod method)
+    {
+      _paymentMethods.Add(method);
+    }
+
     public Customer()
     {
 

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using OrderService.Domain.Models.Aggregates.Orders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,18 @@ namespace OrderService.Domain.Events
   // string customerName,string city,string country,string street,string cardNumber,DateTime validTru,string cardHolderName, int cardTypeId
   public class OrderSubmitted:INotification
   {
-    public OrderSubmitted(string customerName, string cardNumber, DateTime validThru, string cardHolderName, int cardTypeId)
+    public OrderSubmitted(string customerName, string cardNumber, DateTime validThru, string cardHolderName, int cardTypeId, Order submitOrder)
     {
       CustomerName = customerName;
       CardNumber = cardNumber;
       ValidThru = validThru;
       CardHolderName = cardHolderName;
       CardTypeId = cardTypeId;
+      SubmitOrder = submitOrder;
     }
+
+
+    public Order SubmitOrder { get; private set; }
 
     public string CustomerName { get; private set; }
     public string CardNumber { get; private set; }

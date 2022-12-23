@@ -40,7 +40,7 @@ namespace OrderService.Domain.Models.Aggregates.Orders
       OrderDate = DateTime.UtcNow; // Greenwich göz önünde bulunduralım
       ShipAddress = new ShipAddress(city, country, street);
 
-      AddDomainEvent(new OrderSubmitted(customerName, cardNumber, validThru, cardHolderName, cardTypeId));
+      AddDomainEvent(new OrderSubmitted(customerName, cardNumber, validThru, cardHolderName, cardTypeId,this));
 
       // yani tam bu noktada müşteri ve müşteriye ait ödeme yöntemi yok ise bunların tek bir transaction altında tanımlanmasını sağlayacak bir event ayağa kaldıralım.
 
