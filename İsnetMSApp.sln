@@ -61,6 +61,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EFCore", "EFCore", "{0F694C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore.XUnit", "test\BuildingBlocks\EFCore\EFCore.XUnit\EFCore.XUnit.csproj", "{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.ApiGateway", "src\Gateways\WebGateways\Web.ApiGateway\Web.ApiGateway.csproj", "{E9B7F5B4-5C6B-429D-B453-74E654335F62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9B7F5B4-5C6B-429D-B453-74E654335F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B7F5B4-5C6B-429D-B453-74E654335F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B7F5B4-5C6B-429D-B453-74E654335F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B7F5B4-5C6B-429D-B453-74E654335F62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +145,7 @@ Global
 		{B88D5229-8CD4-4239-BE69-D280010D543A} = {FD60DB43-4400-4817-9937-E575602D3868}
 		{0F694C90-2C8B-4EDF-966E-535316AB8574} = {B88D5229-8CD4-4239-BE69-D280010D543A}
 		{F2D8ABBE-4550-4266-8B95-F1991F0FBF5D} = {0F694C90-2C8B-4EDF-966E-535316AB8574}
+		{E9B7F5B4-5C6B-429D-B453-74E654335F62} = {ED538178-65CF-42D9-BFDB-AF5C2B786C01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0497633-B52B-4F57-BAFD-AB812658618A}

@@ -1,0 +1,27 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/orders/{everything}", // gerçek request uri
+      "DownstreamScheme": "http", // https
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/order-service/{everything}", // localhost:5000/order-service
+      "UpstreamHttpMethod": [ "Get", "Post" ], // Put,Delete
+      "RateLimitOptions": { // 10 s içinde sadece 3 request kabul edicek
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimeSpan": 10,
+        "Limit": 3
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5010"
+  }
+
+  // http://localhost:5000/gateway/order-service (upstream) => http://localhost:5003/api/orders (downstream)
+}

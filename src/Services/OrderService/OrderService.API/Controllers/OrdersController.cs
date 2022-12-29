@@ -32,7 +32,7 @@ namespace OrderService.API.Controllers
     }
 
 
-    [HttpPost]
+    [HttpPost("submitOrder")]
     public async Task<IActionResult> SubmitOrder([FromBody] SubmitOrderCommand request)
     {
 
