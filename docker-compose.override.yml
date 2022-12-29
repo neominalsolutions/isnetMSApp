@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  orderservice.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5003
+    ports:
+      - "5003:5003"
+    networks:
+      - net_backendservices
+    depends_on:
+      - web.apigateway
+      - s_consul
+    external_links:
+      - s_consul
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  
+  s_consul:
+    ports:
+      - 8500:8500
+      - 8600:8600/tcp
+      - 8600:8600/udp
+    networks:
+      - ms_net
+
+networks:
+  ms_net:
+   driver: bridge
+  

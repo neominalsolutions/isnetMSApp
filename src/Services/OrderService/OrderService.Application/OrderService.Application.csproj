@@ -21,4 +21,8 @@
     <ProjectReference Include="..\OrderService.Domain\OrderService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Queries\" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+
+  orderservice.api:
+    container_name: isnet_orderservice
+    image: ${DOCKER_REGISTRY-}orderserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/OrderService/OrderService.API/Dockerfile
+
+  s_consul:
+    container_name: c_consul
+    image: consul
