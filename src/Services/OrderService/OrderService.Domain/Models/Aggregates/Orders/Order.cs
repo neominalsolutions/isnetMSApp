@@ -57,7 +57,7 @@ namespace OrderService.Domain.Models.Aggregates.Orders
         throw new MaximumStockOverFlow(errorMessage:"Maksimum stok sayısı ürün başına 20 geçemez");
       }
 
-      _orderItems.Add(new OrderItem(productId: productId, orderId: this.Id, productName: productName, listPrice: listPrice));
+      _orderItems.Add(new OrderItem(productId: productId, orderId: this.Id, productName: productName, listPrice: listPrice, quantity: quantity));
 
 
     }

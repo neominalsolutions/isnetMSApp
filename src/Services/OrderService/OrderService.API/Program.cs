@@ -19,29 +19,36 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+
+
 // servis registration yapalým
 
 builder.Services.AddPersistenceRegistration(builder.Configuration); // dbContext register
 builder.Services.AddApplicationRegistration(typeof(Program));
 // mediatR Api Projesinde Program class olduðu için register et.
 
-var assm = Assembly.GetExecutingAssembly();
 
-builder.Services.AddMediatR(assm);
+builder.Services.AddCap(options =>
+{
+  options.UseEntityFramework<OrderContext>();
+  options.UseSqlServer(builder.Configuration.GetConnectionString("OrderDbConnectionString"));
 
 
-//builder.Services.AddDbContext<OrderContext>(opt =>
-//{
-//  opt.UseSqlServer(builder.Configuration["OrderDbConnectionString"]);
-//  opt.EnableSensitiveDataLogging();
-//});
+  options.UseDashboard(p => p.PathMatch = "/cap");
 
-//builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-//builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+  options.UseRabbitMQ(options =>
+  {
+    options.ConnectionFactoryOptions = options =>
+    {
+      options.Ssl.Enabled = false;
+      options.HostName = "localhost";
+      options.UserName = "guest";
+      options.Password = "guest";
+      options.Port = 5672;
+    };
+  });
 
-//var optionsBuilder = new DbContextOptionsBuilder<OrderContext>()
-//    .UseSqlServer(builder.Configuration["OrderDbConnectionString"]);
-
+});
 
 
 var app = builder.Build();

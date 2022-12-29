@@ -20,7 +20,7 @@ namespace OrderService.Infrastructure
         {
             services.AddDbContext<OrderContext>(opt =>
             {
-                opt.UseSqlServer(configuration["OrderDbConnectionString"]);
+                opt.UseSqlServer(configuration.GetConnectionString("OrderDbConnectionString"));
                 opt.EnableSensitiveDataLogging();
             });
 
@@ -28,7 +28,7 @@ namespace OrderService.Infrastructure
             services.AddScoped<IOrderRepository, OrderRepository>();
 
             var optionsBuilder = new DbContextOptionsBuilder<OrderContext>()
-                .UseSqlServer(configuration["OrderDbConnectionString"]);
+                .UseSqlServer(configuration.GetConnectionString("OrderDbConnectionString"));
 
 
             return services;

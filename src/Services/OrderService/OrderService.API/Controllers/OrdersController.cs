@@ -1,8 +1,11 @@
-﻿using MediatR;
+﻿using DotNetCore.CAP;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OrderService.API.IntegrationEvents;
 using OrderService.Application.Features.Commands.Orders;
 using OrderService.Domain.Models.Aggregates.Orders;
+using OrderService.Infrastructure.Contexts;
 
 namespace OrderService.API.Controllers
 {
@@ -15,13 +18,17 @@ namespace OrderService.API.Controllers
 
     private readonly IOrderRepository orderRepository;
     private readonly IMediator mediator; // gelen iş isteklerinin Mediator tasarım deseni ile yönlendirilmesini sağlıyor
+    private readonly ICapPublisher capPublisher;
+    private readonly OrderContext orderContext;
 
     //private SubmitOrderCommandHandler commandHandler = new SubmitOrderCommandHandler();
 
-    public OrdersController(IOrderRepository orderRepository, IMediator mediator)
+    public OrdersController(IOrderRepository orderRepository, IMediator mediator, ICapPublisher capPublisher, OrderContext orderContext)
     {
       this.orderRepository = orderRepository;
       this.mediator = mediator;
+      this.capPublisher = capPublisher;
+      this.orderContext = orderContext;
     }
 
 
@@ -51,12 +58,38 @@ namespace OrderService.API.Controllers
       // mediator da komut gönderirken send event fırlatırken publish methodu kullanırız
 
       //var @command = new SubmitOrderCommand();
-      var result = await this.mediator.Send(request);
+      var orderId = await this.mediator.Send(request);
 
-      //await commandHandler.Handle(request);
+      var order = await orderRepository.GetById(orderId);
+
+      if (order != null)
+      {
+        var orderLines = order.OrderItems.Select(a => new OrderLine
+        {
+          ProductId = a.ProductId,
+          Quantity = a.Quantity
+
+        }).ToList();
+
+        var orderCreatedEvent = new OrderCreatedIntegrationEvent(orderId: order.Id, orderLines: orderLines);
 
 
-       return Ok("İşlem Başarılı");
+        using (var transaction = orderContext.Database.BeginTransaction(capPublisher, autoCommit:true))
+        {
+          capPublisher.Publish("OrderCreated", orderCreatedEvent);
+          //await capPublisher.PublishAsync("OrderCreated", orderCreatedEvent);
+        }
+
+        // ProductService OrderItemsları atıp ProductService bu Itemları dinleyip kendi stok değerlerinin güncellenmesini sağlamak.
+
+      }
+      else
+      {
+        return BadRequest();
+      }
+
+
+      return Ok("İşlem Başarılı");
     }
 
 

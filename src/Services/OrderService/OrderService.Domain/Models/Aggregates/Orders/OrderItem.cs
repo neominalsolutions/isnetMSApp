@@ -15,6 +15,8 @@ namespace OrderService.Domain.Models.Aggregates.Orders
     public string ProductId { get; set; }
     public string ProductName { get; set; }
     public decimal ListPrice { get; set; }
+    public int Quantity { get; set; }
+
 
 
     // Order ihtiyaç duyduğu ProductNesnesi olarak ilişkilendirip. Ayrıca bir tablo açıyoruz.
@@ -30,12 +32,13 @@ namespace OrderService.Domain.Models.Aggregates.Orders
 
     }
 
-    public OrderItem(string orderId, string productId, string productName, decimal listPrice)
+    public OrderItem(string orderId, string productId, string productName, decimal listPrice, int quantity)
     {
       OrderId = orderId;
       ProductId = productId;
       ProductName = productName;
       ListPrice = listPrice;
+      Quantity = quantity;
     }
   }
 }
