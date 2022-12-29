@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{333EB83E-CA0B-4A61-9A80-35DA8B2066B1}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\CAP.png = ..\..\CAP.png
+		..\..\CleanArchitecture.png = ..\..\CleanArchitecture.png
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FD60DB43-4400-4817-9937-E575602D3868}"
 EndProject
